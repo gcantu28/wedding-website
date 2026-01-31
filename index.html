@@ -175,3 +175,47 @@
 
     <nav>
         <a href="#welcome" class="nav-link">Pups</a>
+        <a href="#travel" class="nav-link">Travel</a>
+        <a href="#registry" class="nav-link">Registry</a>
+        <a href="#rsvp" class="nav-link">RSVP</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="welcome" class="card">
+            <h2>A Welcome from the Pups</h2>
+            <img src="https://www.dropbox.com/scl/fi/fdhj7750xjvflp9q0hjnc/F53DB12D-21CC-4CF2-BD16-F41BC52877A2.JPEG?rlkey=ndrjcxf517sua5u1stu0t7vk5&st=0jx6p3aw&dl=1" alt="Our Pups" style="width: 100%; max-width: 350px; border: 12px solid white; box-shadow: 0 10px 20px rgba(0,0,0,0.15); transform: rotate(-2deg); margin-bottom: 20px;">
+            <p>Hi everyone! We can't wait to celebrate with you!</p>
+            <p style="font-family: 'Abril Fatface'; color: var(--emerald);">Bella, Quentin & Daisy</p>
+        </section>
+
+        <section id="travel" class="card">
+            <h2>Travel & Stay</h2>
+            <p>San Antonio, Texas</p>
+            <a href="https://maps.google.com" target="_blank" class="btn" style="background:none; border: 2px solid var(--maroon); color: var(--maroon);">View Map</a>
+        </section>
+
+        <section id="rsvp" class="card" style="background: var(--maroon); color: white;">
+            <h2 style="color: white;">Kindly Respond</h2>
+            <a href="https://withjoy.com/gabby-cantu-and-xavier/rsvp" class="btn" style="background: white; color: var(--maroon);">RSVP Online</a>
+        </section>
+
+    </div>
+
+    <footer style="padding: 40px; opacity: 0.8;">
+        <p>• X & G • 2026</p>
+    </footer>
+
+    <script>
+        var weddingDate = new Date("Oct 10, 2026 16:30:00").getTime();
+        setInterval(function() {
+            var now = new Date().getTime();
+            var diff = weddingDate - now;
+            var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("countdown").innerHTML = days + " DAYS & " + hours + " HOURS TO GO";
+        }, 1000);
+    </script>
+
+</body>
+</html>
