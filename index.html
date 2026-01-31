@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,22 +26,15 @@
             line-height: 1.6;
         }
 
-        /* --- FIXED CORNER BACKGROUND (YOUR CANVA IMAGE) --- */
+        /* --- BACKGROUND SYSTEM --- */
         .bg-container {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -1;
+            z-index: -2;
             background-image: url('https://www.dropbox.com/scl/fi/ai8dyhbs672mq4m7hpdwa/Untitled-design.png?rlkey=guuik19awfedy9tawapy7lsw3&st=vls6s35w&dl=1');
-                background-size: cover;        /* This spreads it wide to fill the screen */
-                background-position: center;   /* Keeps the focus in the middle */
-                background-attachment: fixed; /* Optional: keeps background still while you scroll */
-                background-repeat: no-repeat;  /* Prevents the image from doubling up */
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .bg-overlay {
@@ -52,12 +44,11 @@
             z-index: -1;
         }
 
-        /* Header & Retro Typography */
         header { padding: 100px 20px 60px; }
 
         h1 {
             font-family: 'Abril Fatface', cursive;
-            font-size: clamp(3rem, 10vw, 5.5rem);
+            font-size: clamp(2.5rem, 10vw, 5.5rem);
             color: #1a1a1a;
             margin: 0;
             line-height: 0.9;
@@ -86,19 +77,17 @@
             text-transform: uppercase;
         }
 
-        /* Navigation */
-      nav {
-         position: sticky;
-          top: 20px;               /* Adds space from the top of the screen */
-        max-width: 500px;        /* Limits the length of the bar */
-        margin: 0 auto;          /* Centers it */
-        background: rgba(253, 251, 247, 0.9);
-        backdrop-filter: blur(5px);
-        padding: 12px 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-        border-radius: 50px;     /* Makes the ends rounded */
-        z-index: 1000;
-        border: 1px solid rgba(253, 251, 247, 0.75);
+        nav {
+            position: sticky;
+            top: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+            background: rgba(253, 251, 247, 0.9);
+            padding: 12px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-radius: 50px;
+            z-index: 1000;
+            border: 1px solid rgba(255, 255, 255, 0.5);
         }
 
         .nav-link {
@@ -111,22 +100,19 @@
             letter-spacing: 1.5px;
         }
 
-        /* Container & Cards */
         .container { max-width: 600px; margin: 0 auto; padding: 20px; }
 
         .card {
-            background: rgba(253, 251, 247, 0.75); 
-            backdrop-filter: blur(5px); /* Higher number for more "frosted" look */
+            background: rgba(253, 251, 247, 0.85); 
             padding: 40px;
             margin-bottom: 40px;
-            border: 1px solid rgba(253, 251, 247, 0.75); 
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.40);
-          border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.6); 
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
         }
 
         h2 { font-family: 'Abril Fatface', cursive; color: var(--maroon); font-size: 2.5rem; margin-top: 0; }
 
-        /* Buttons */
         .btn {
             display: inline-block;
             background-color: var(--maroon);
@@ -134,12 +120,9 @@
             padding: 16px 35px;
             text-decoration: none;
             font-family: 'Abril Fatface', cursive;
-            font-size: 1.1rem;
+            border-radius: 4px;
             transition: 0.3s;
-            margin: 10px;
         }
-
-        .btn:hover { background-color: var(--emerald); transform: translateY(-2px); }
 
         .btn-outline {
             display: inline-block;
@@ -148,97 +131,28 @@
             padding: 14px 30px;
             text-decoration: none;
             font-weight: bold;
-            margin: 10px;
             transition: 0.3s;
         }
 
-        .btn-outline:hover { background: var(--maroon); color: white; }
-
-        /* Story Section Styles */
-        .story-flex {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            text-align: left;
-            flex-wrap: wrap;
-        }
-
-        .story-text { flex: 1; min-width: 300px; }
-
-        /* Divider */
-        .divider { color: var(--rose); font-size: 2rem; margin: 20px 0; opacity: 0.6; }
-
-        /* RSVP Specific */
-        .rsvp-card { background: var(--maroon); color: white; }
-        .rsvp-card h2 { color: white; }
-        .btn-white { background: white; color: var(--emerald); }
-
-        
         footer {
-           background: rgba(253, 251, 247, 0.75));
-            backdrop-filter: blur(5px);
-            padding: 50px 40px;
-            max-width: 500px;        /* Limits the length of the bar */
-            margin: 0 auto;  
-            margin-bottom: 50px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            border-radius: 50px; 
+            background: rgba(253, 251, 247, 0.85);
+            padding: 40px;
+            max-width: 500px;
+            margin: 0 auto 50px auto;
+            border-radius: 30px;
         }
-}
-        
-      /* --- MOBILE PATCH: Add this at the bottom of your style section --- */
-@media (max-width: 600px) {
-    /* Fixes the background 'jumping' on iPhone scroll */
-    .bg-container { 
-        background-attachment: scroll !important; 
-    }
 
-    /* Makes the header fit without crowding */
-    header { 
-        padding: 40px 10px 20px !important; 
-    }
-
-    /* Keeps the nav bar slim and usable on small screens */
-    nav { 
-        width: 92% !important; 
-        padding: 8px 5px !important;
-        top: 5px !important;
-    }
-
-    .nav-link { 
-        margin: 0 5px !important; 
-        font-size: 0.6rem !important; 
-    }
-
-    /* Stops cards from feeling too bulky */
-    .card { 
-        padding: 25px 15px !important; 
-        margin-bottom: 20px !important;
-        border-radius: 20px !important; 
-    }
-
-    /* Prevents the 'Xavier & Gabrielle' from being too huge */
-    h1 { 
-        font-size: 2.2rem !important; 
-    }
-
-    /* Makes buttons easier to tap with thumbs */
-    .btn, .btn-outline {
-        display: block !important;
-        width: 90% !important;
-        margin: 10px auto !important;
-        padding: 12px !important;
-    }
-
-    /* Ensures the pup photo doesn't zoom too far in */
-    .pet-photo img {
-        width: 100% !important;
-        transform: rotate(0deg) !important; /* Straighter is safer for small screens */
-    }
-}
+        /* --- MOBILE PATCH --- */
+        @media (max-width: 600px) {
+            header { padding: 40px 10px 20px; }
+            h1 { font-size: 2.2rem; }
+            nav { width: 92%; padding: 8px 5px; top: 10px; }
+            .nav-link { margin: 0 5px; font-size: 0.6rem; }
+            .card { padding: 25px 15px; border-radius: 15px; }
+            .btn, .btn-outline { display: block; width: 90%; margin: 10px auto; }
+            .bg-container { background-attachment: scroll; }
+        }
     </style>
-
-
 </head>
 <body>
 
@@ -248,7 +162,7 @@
     <header>
         <h1>Xavier <span class="ampersand">&</span> Gabrielle</h1>
         <div class="date-box">OCTOBER 10, 2026</div>
-        <div id="countdown">Calculating forever...</div>
+        <div id="countdown">Calculating...</div>
     </header>
 
     <nav>
@@ -260,73 +174,41 @@
 
     <div class="container">
 
-       <section id="welcome" class="card" style="max-width: 600px; margin: 0 auto 40px auto; text-align: center;">
-    
-    <div style="font-size: 2rem; color: var(--emerald); margin-bottom: 10px;">🐾</div>
-    
-    <h2 style="font-family: 'Abril Fatface', cursive; color: var(--maroon); margin-bottom: 20px;">
-        A Welcome from the Pups
-    </h2>
-
-    <div class="pet-photo" style="margin: 25px 0;">
-        <img src="https://www.dropbox.com/scl/fi/fdhj7750xjvflp9q0hjnc/F53DB12D-21CC-4CF2-BD16-F41BC52877A2.JPEG?rlkey=ndrjcxf517sua5u1stu0t7vk5&st=0jx6p3aw&dl=1" alt="Our Pups" style="
-            width: 100%; 
-            max-width: 350px; 
-            height: auto; 
-            border: 12px solid white; /* Thick white border like a photo */
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15); 
-            border-radius: 2px;
-            transform: rotate(-2deg); /* Gives it a casual 'tossed on the table' look */
-        ">
-    </div>
-
-    <div class="story-text" style="line-height: 1.8; color: #333;">
-        <p>Hi everyone! While Dad & Mom are busy picking out flowers and cake, we wanted to be the first to welcome you to their wedding website!</p>
-        
-        <p>We’ve been there for all the walks, the late-night snuggles and kisses. We’re so excited that they’re finally making it official, and we know they can't wait to celebrate with all of you.</p>
-
-        <p style="font-style: italic; margin-top: 20px;">
-            Please explore the site for all the details—and if you have any extra treats, you know who to find on the big day!
-        </p>
-    </div>
-
-    <div style="margin-top: 30px; font-family: 'Abril Fatface', cursive; color: var(--emerald); font-size: 1.4rem;">
-        With Love & Tail Wags, <br>
-        Bella, Quentin & Daisy 
-    </div>
-</section>
+        <section id="welcome" class="card">
+            <div style="font-size: 2rem; color: var(--emerald);">🐾</div>
+            <h2>A Welcome from the Pups</h2>
+            <img src="https://www.dropbox.com/scl/fi/fdhj7750xjvflp9q0hjnc/F53DB12D-21CC-4CF2-BD16-F41BC52877A2.JPEG?rlkey=ndrjcxf517sua5u1stu0t7vk5&st=0jx6p3aw&dl=1" alt="Our Pups" style="width: 100%; max-width: 350px; border: 10px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transform: rotate(-2deg); margin: 20px auto; display: block;">
+            <p>Hi everyone! While Dad & Mom are busy picking out flowers, we wanted to welcome you to their site!</p>
+            <p style="font-family: 'Abril Fatface', cursive; color: var(--emerald);">Bella, Quentin & Daisy</p>
+        </section>
 
         <section id="travel" class="card">
             <h2>Travel & Stay</h2>
-            <p><strong>The Venue:</strong> LOCATION</p>
-            <a href="https://maps.google.com" target="_blank" class="btn-outline">View Map & Directions</a>
+            <p><strong>The Venue:</strong> San Antonio, TX</p>
+            <a href="https://maps.google.com" target="_blank" class="btn-outline">View Map</a>
         </section>
 
         <section id="registry" class="card">
             <h2>Registry</h2>
-            <p>Your presence is the greatest gift, but if you wish to honor us with a gift, we have a honeymoon fund below.</p>
-            <a href="https://withjoy.com/gabby-cantu-and-xavier/registry?pid=d63cd7ec-e1f2-4b5a-8767-b939c83ce34e" class="btn">Honeymoon Fund</a>
+            <a href="https://withjoy.com/gabby-cantu-and-xavier/registry" class="btn">Honeymoon Fund</a>
         </section>
 
         <section id="photos" class="card">
             <h2>Guest Gallery</h2>
-            <p>Help us capture the magic through your lens!</p>
             <a href="https://www.dropbox.com/request/bFsM8yjHcOGsLo1S99UL" class="btn">Upload Photos</a>
-            <br>
-            <a href="https://www.dropbox.com/scl/fo/9nmgothegh7bl2tjms91g/AOOgV12wYrIJch78w7ceihQ?rlkey=n1nmpp8t2sxm2hsgrx9rmeusj&st=q3xi3zox&dl=0" class="btn-outline">View Full Gallery</a>
         </section>
 
-        <section id="rsvp" class="card rsvp-card">
-            <h2>Kindly Respond</h2>
-            <p>Please let us know if you can join us by August 15, 2026.</p>
-            <a href="https://withjoy.com/gabby-cantu-and-xavier/rsvp" class="btn btn-white">RSVP Online</a>
+        <section id="rsvp" class="card" style="background: var(--maroon); color: white;">
+            <h2 style="color: white;">Kindly Respond</h2>
+            <p>Please RSVP by August 15, 2026.</p>
+            <a href="https://withjoy.com/gabby-cantu-and-xavier/rsvp" class="btn" style="background: white; color: var(--maroon);">RSVP Online</a>
         </section>
 
     </div>
 
     <footer>
-        <p> •X & G• Thank you for being part of our story  <p style="font-size: 1.2rem;">&hearts;</p>
-         
+        <p>• X & G •</p>
+        <p>Thank you for being part of our story.</p>
     </footer>
 
     <script>
@@ -346,4 +228,3 @@
 
 </body>
 </html>
-
