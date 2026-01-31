@@ -186,11 +186,56 @@
         }
 }
         
-        @media (max-width: 600px) {
-            body { padding: 15px 10px; background-attachment: scroll; }
-            .card { padding: 30px 15px; }
-            .pet-photo { width: 95%; }
-        }
+      /* --- MOBILE PATCH: Add this at the bottom of your style section --- */
+@media (max-width: 600px) {
+    /* Fixes the background 'jumping' on iPhone scroll */
+    .bg-container { 
+        background-attachment: scroll !important; 
+    }
+
+    /* Makes the header fit without crowding */
+    header { 
+        padding: 40px 10px 20px !important; 
+    }
+
+    /* Keeps the nav bar slim and usable on small screens */
+    nav { 
+        width: 92% !important; 
+        padding: 8px 5px !important;
+        top: 5px !important;
+    }
+
+    .nav-link { 
+        margin: 0 5px !important; 
+        font-size: 0.6rem !important; 
+    }
+
+    /* Stops cards from feeling too bulky */
+    .card { 
+        padding: 25px 15px !important; 
+        margin-bottom: 20px !important;
+        border-radius: 20px !important; 
+    }
+
+    /* Prevents the 'Xavier & Gabrielle' from being too huge */
+    h1 { 
+        font-size: 2.2rem !important; 
+    }
+
+    /* Makes buttons easier to tap with thumbs */
+    .btn, .btn-outline {
+        display: block !important;
+        width: 90% !important;
+        margin: 10px auto !important;
+        padding: 12px !important;
+    }
+
+    /* Ensures the pup photo doesn't zoom too far in */
+    .pet-photo img {
+        width: 100% !important;
+        transform: rotate(0deg) !important; /* Straighter is safer for small screens */
+    }
+}
     </style>
 
 
