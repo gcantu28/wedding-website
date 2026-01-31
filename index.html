@@ -33,9 +33,16 @@
             top: 0; left: 0; width: 100%; height: 100%;
             z-index: -1;
             background-image: url('https://www.dropbox.com/scl/fi/yufay5vvk1sx7zfezpwik/save-the-date.png?rlkey=v5iise6vjvc88qq7e2203id0i&st=nq3rric1&raw=1');
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
+                background-size: cover;        /* This spreads it wide to fill the screen */
+                background-position: center;   /* Keeps the focus in the middle */
+                background-attachment: fixed; /* Optional: keeps background still while you scroll */
+                background-repeat: no-repeat;  /* Prevents the image from doubling up */
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         }
 
         .bg-overlay {
