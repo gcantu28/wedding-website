@@ -229,16 +229,19 @@
         }
 
         /* --- MOBILE FIX FOR BACKGROUND --- */
-      @media (max-width: 768px) { .bg-container { position: absolute;
-        background-image: url('save the date (1).png'); /* your mobile version */
-        background-size: cover; 
+     @media (max-width: 768px) {
+    body {
+        background-image: url('save the date (1).png');
+        background-size: cover;
         background-position: center;
+        background-repeat: no-repeat;
         background-attachment: scroll;
-       
+        opacity: 0.25;
     }
 
+    .bg-container,
     .bg-overlay {
-        display: none;
+        display: none; /* hide the desktop background system */
     }
 }
 
@@ -347,7 +350,7 @@
     </div>
 
     <footer>
-        <p>• X & G • Thank you for being part of our story</p>
+        <p>• X & G • </p>
         <p style="font-size: 1.2rem;">&hearts;</p>
     </footer>
 
