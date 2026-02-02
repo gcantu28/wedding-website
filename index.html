@@ -31,7 +31,7 @@
         }
 
         /* --- FIXED CORNER BACKGROUND (CANVA IMAGE) --- */
-        .bg-container {
+       .bg-container {
             position: fixed;
             top: 0;
             left: 0;
@@ -39,9 +39,11 @@
             height: 100%;
             z-index: -1;
             background-image: url('Untitled design (1).png');
-            background-size: contain;
-            background-position: cover;
+            background-size: cover;        /* fills screen */
+            background-position: center;   /* centers image */
             background-repeat: no-repeat;
+        }
+
         }
 
         .bg-overlay {
@@ -227,14 +229,12 @@
         }
 
         /* --- MOBILE FIX FOR BACKGROUND --- */
-        @media (max-width: 768px) {
-    .bg-container {
-        position: absolute;
+      @media (max-width: 768px) { .bg-container { position: absolute;
         background-image: url('save the date (1).png'); /* your mobile version */
         background-size: cover; 
         background-position: center;
         background-attachment: scroll;
-        opacity: 0.25; /* optional */
+       
     }
 
     .bg-overlay {
