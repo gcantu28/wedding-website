@@ -219,8 +219,8 @@
 
       
 
-        /* --- MOBILE FIX FOR BACKGROUND --- */
- @media (max-width: 768px) {
+     /* --- MOBILE FIX FOR BACKGROUND --- */
+@media (max-width: 768px) {
 
     /* Turn off desktop background */
     .bg-container,
@@ -241,26 +241,37 @@
         background-attachment: scroll;
         background-color: var(--cream);
     }
-}
 
+    /* MOVE FOOTER UP + REMOVE CARD LOOK */
+    footer {
+        margin-top: -20px !important; /* adjust as needed */
+        background: none !important;
+        padding: 0 !important;
     }
 
-    .bg-container,
-    .bg-overlay {
-        display: none; /* hides desktop background system */
+    /* If footer is inside a card */
+    .footer-card,
+    .card.footer-card {
+        background: none !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
 }
 
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2.8rem;
-            }
+/* Smaller screens */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.8rem;
+    }
 
-            .nav-link {
-                margin: 0 5px;
-                font-size: 0.6rem;
-            }
-        }
+    .nav-link {
+        margin: 0 5px;
+        font-size: 0.6rem;
+    }
+}
+
     </style>
 </head>
 
@@ -366,10 +377,10 @@
                 var diff = weddingDate - now;
 
                 var days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                
 
                 document.getElementById("countdown").innerHTML =
-                    days + " DAYS & " + hours + " HOURS TO GO";
+                    days + " DAYS TO GO";
             }
 
             updateTimer();
