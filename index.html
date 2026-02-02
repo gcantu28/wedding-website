@@ -35,7 +35,7 @@
             #desktop-content { display: block !important; }
 
             body { 
-                /* PASTE YOUR LANDSCAPE (DESKTOP) IMAGE LINK HERE */
+                /* DESKTOP IMAGE LINK */
                 background-image: url('https://www.dropbox.com/scl/fi/ai8dyhbs672mq4m7hpdwa/Untitled-design.png?rlkey=guuik19awfedy9tawapy7lsw3&st=vls6s35w&dl=1');
                 background-attachment: fixed;
                 padding: 60px 0;
@@ -60,7 +60,8 @@
         
         @media screen and (min-width: 801px) {
             h1 { font-size: 4.5rem; }
-            nav { max-width: 450px; padding: 15px; }
+            nav { max-width: 500px; padding: 15px; }
+            .nav-link { font-size: 0.8rem; }
             .btn { display: inline-block; width: auto; padding: 15px 40px; }
         }
     </style>
@@ -76,17 +77,28 @@
             <nav>
                 <a href="#m-pups" class="nav-link">Pups</a>
                 <a href="#m-travel" class="nav-link">Travel</a>
+                <a href="#m-gallery" class="nav-link">Gallery</a>
                 <a href="#m-rsvp" class="nav-link">RSVP</a>
             </nav>
+
             <section id="m-pups" class="card">
                 <h2>The Pups</h2>
                 <img src="https://www.dropbox.com/scl/fi/fdhj7750xjvflp9q0hjnc/F53DB12D-21CC-4CF2-BD16-F41BC52877A2.JPEG?rlkey=ndrjcxf517sua5u1stu0t7vk5&st=0jx6p3aw&dl=1" class="photo">
-                <p>Hi from Bella, Quentin & Daisy!</p>
+                <p>Welcome! We are so excited to see you!</p>
             </section>
+
             <section id="m-travel" class="card">
                 <h2>Travel</h2>
-                <a href="https://maps.google.com" class="btn">View Map</a>
+                <p>San Antonio, TX</p>
+                <a href="https://maps.google.com" class="btn" style="background:none; border: 1px solid var(--maroon); color: var(--maroon);">Open Map</a>
             </section>
+
+            <section id="m-gallery" class="card">
+                <h2>Gallery</h2>
+                <p>Share your photos with us!</p>
+                <a href="https://www.dropbox.com/request/bFsM8yjHcOGsLo1S99UL" class="btn">Upload Photos</a>
+            </section>
+
             <section id="m-rsvp" class="card" style="background: var(--maroon); color: white;">
                 <h2 style="color: white;">RSVP</h2>
                 <a href="https://withjoy.com/gabby-cantu-and-xavier/rsvp" class="btn" style="background:white; color:var(--maroon);">RSVP Online</a>
@@ -98,18 +110,33 @@
         <div class="container">
             <header>
                 <h1>Xavier & Gabrielle</h1>
-                <p style="font-family:'Abril Fatface'; font-size: 1.8rem;">OCTOBER 10, 2026</p>
+                <p style="font-family:'Abril Fatface'; font-size: 1.8rem; border-top: 2px solid black; border-bottom: 2px solid black; display: inline-block; padding: 5px 40px; margin-top: 15px;">OCTOBER 10, 2026</p>
             </header>
             <nav>
                 <a href="#d-pups" class="nav-link">The Pups</a>
                 <a href="#d-travel" class="nav-link">Travel & Stay</a>
+                <a href="#d-gallery" class="nav-link">Guest Gallery</a>
                 <a href="#d-rsvp" class="nav-link">RSVP</a>
             </nav>
+
             <section id="d-pups" class="card">
                 <h2>A Welcome from the Pups</h2>
                 <img src="https://www.dropbox.com/scl/fi/fdhj7750xjvflp9q0hjnc/F53DB12D-21CC-4CF2-BD16-F41BC52877A2.JPEG?rlkey=ndrjcxf517sua5u1stu0t7vk5&st=0jx6p3aw&dl=1" class="photo">
                 <p>Welcome to our wedding website! We are so happy you're here.</p>
             </section>
+
+            <section id="d-travel" class="card">
+                <h2>Travel & Stay</h2>
+                <p>San Antonio, Texas</p>
+                <a href="https://maps.google.com" target="_blank" class="btn" style="background:none; border: 1px solid var(--maroon); color: var(--maroon);">View Venue Map</a>
+            </section>
+
+            <section id="d-gallery" class="card">
+                <h2>Guest Gallery</h2>
+                <p>Help us capture every moment of our special day.</p>
+                <a href="https://www.dropbox.com/request/bFsM8yjHcOGsLo1S99UL" class="btn">Upload Photos</a>
+            </section>
+
             <section id="d-rsvp" class="card" style="background: var(--maroon); color: white;">
                 <h2 style="color: white;">Kindly Respond</h2>
                 <a href="https://withjoy.com/gabby-cantu-and-xavier/rsvp" class="btn" style="background:white; color:var(--maroon);">Online RSVP</a>
