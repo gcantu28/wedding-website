@@ -40,7 +40,7 @@
             z-index: -1;
             background-image: url('https://www.dropbox.com/scl/fi/ai8dyhbs672mq4m7hpdwa/Untitled-design.png?rlkey=guuik19awfedy9tawapy7lsw3&st=rpamhpbv&dl=1');
             background-size: contain;
-            background-position: center;
+            background-position: cover;
             background-repeat: no-repeat;
         }
 
@@ -228,16 +228,20 @@
 
         /* --- MOBILE FIX FOR BACKGROUND --- */
         @media (max-width: 768px) {
-            .bg-container {
-                position: absolute;
-                background-size: cover;
-                background-attachment: scroll;
-                opacity: 0.25;
-            }
+    .bg-container {
+        position: absolute;
+        background-image: url('https://www.dropbox.com/scl/fi/yufay5vvk1sx7zfezpwik/save-the-date.png?rlkey=v5iise6vjvc88qq7e2203id0i&st=bmh5j79y&dl=1'); /* your mobile version */
+        background-size: cover; 
+        background-position: center;
+        background-attachment: scroll;
+        opacity: 0.25; /* optional */
+    }
 
-            .bg-overlay {
-                display: none;
-            }
+    .bg-overlay {
+        display: none;
+    }
+}
+
         }
 
         @media (max-width: 600px) {
