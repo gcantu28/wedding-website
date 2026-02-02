@@ -19,69 +19,58 @@
             margin: 0;
             padding: 0;
             width: 100%;
+            height: 100%;
             overflow-x: hidden;
             background-color: var(--cream);
-            scroll-behavior: smooth;
         }
 
-        body {
-            font-family: 'Lato', sans-serif;
-            color: var(--text);
-            text-align: center;
-            line-height: 1.6;
-        }
-
-        /* --- DESKTOP BACKGROUND --- */
-        .bg-container {
+        /* --- THE BACKGROUND ENGINE --- */
+        .bg-fixed {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -10;
-            /* DESKTOP IMAGE BELOW */
-            background-image: url("https://www.dropbox.com/scl/fi/ai8dyhbs672mq4m7hpdwa/Untitled-design.png?rlkey=guuik19awfedy9tawapy7lsw3&st=p5sry6mk&dl=1");
+            width: 100vw;
+            height: 100vh;
+            /* DESKTOP IMAGE */
+            background-image: url('https://www.dropbox.com/scl/fi/ai8dyhbs672mq4m7hpdwa/Untitled-design.png?rlkey=guuik19awfedy9tawapy7lsw3&st=vls6s35w&dl=1') !important;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            z-index: -10; /* Forces it to the very bottom layer */
         }
 
         .bg-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(253, 251, 247, 0.3);
+            background: rgba(253, 251, 247, 0.2);
             z-index: -9;
         }
 
-        header { padding: 60px 20px 30px; }
+        /* --- CONTENT WRAPPER --- */
+        .content-wrapper {
+            position: relative;
+            z-index: 1; /* Sits above the background */
+            width: 100%;
+            padding-bottom: 50px;
+        }
+
+        header { padding: 60px 20px 20px; }
 
         h1 {
             font-family: 'Abril Fatface', cursive;
-            font-size: clamp(2.2rem, 10vw, 5rem);
-            color: #1a1a1a;
-            margin: 0;
+            font-size: clamp(2.5rem, 8vw, 5rem);
             text-transform: uppercase;
-            line-height: 1.1;
+            margin-bottom: 0;
         }
-
-        .ampersand { display: block; font-size: 2rem; color: var(--maroon); margin: 5px 0; }
 
         .date-box {
             font-family: 'Abril Fatface', cursive;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             border-top: 2px solid #1a1a1a;
             border-bottom: 2px solid #1a1a1a;
             display: inline-block;
-            padding: 10px 30px;
-            margin-top: 15px;
-        }
-
-        #countdown {
+            padding: 10px 40px;
             margin-top: 20px;
-            font-weight: 700;
-            color: var(--maroon);
-            font-size: 0.9rem;
-            letter-spacing: 1px;
         }
 
         nav {
@@ -89,13 +78,12 @@
             top: 15px;
             width: 90%;
             max-width: 450px;
-            margin: 0 auto 30px;
+            margin: 30px auto;
             background: rgba(253, 251, 247, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 12px 5px;
+            backdrop-filter: blur(8px);
+            padding: 12px;
             border-radius: 50px;
-            z-index: 1000;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             display: flex;
             justify-content: space-around;
         }
@@ -106,123 +94,96 @@
             font-weight: 700;
             text-transform: uppercase;
             font-size: 0.7rem;
-            letter-spacing: 0.5px;
         }
 
         .container {
             width: 95%;
             max-width: 600px;
             margin: 0 auto;
-            padding-bottom: 80px;
         }
 
         .card {
             background: rgba(253, 251, 247, 0.9);
-            padding: 35px 20px;
-            margin-bottom: 25px;
-            border-radius: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            border: 1px solid rgba(255,255,255,0.5);
+            padding: 40px 20px;
+            margin-bottom: 30px;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-
-        h2 { font-family: 'Abril Fatface', cursive; color: var(--maroon); font-size: 2.2rem; margin-top: 0; }
-
-        .photo-frame {
-            width: 100%;
-            max-width: 350px;
-            background: white;
-            padding: 10px;
-            margin: 20px auto;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            transform: rotate(-1deg);
-        }
-
-        .photo-frame img { width: 100%; height: auto; display: block; }
 
         .btn {
             display: inline-block;
             background: var(--maroon);
             color: white;
-            padding: 15px 30px;
+            padding: 16px 30px;
             text-decoration: none;
             font-family: 'Abril Fatface', cursive;
             border-radius: 4px;
-            margin: 10px auto;
-            width: 80%;
-            max-width: 280px;
+            margin-top: 15px;
         }
 
-        /* --- MOBILE OVERRIDES SECTION --- */
+        /* --- MOBILE REPAIRS --- */
         @media (max-width: 600px) {
-            .bg-container { 
-                /* PASTE YOUR MOBILE IMAGE URL HERE */
-                background-image: url("https://www.dropbox.com/scl/fi/yufay5vvk1sx7zfezpwik/save-the-date.png?rlkey=v5iise6vjvc88qq7e2203id0i&st=sxquti9i&dl=1") !important;
-                background-attachment: scroll !important; 
+            .bg-fixed {
+                /* MOBILE IMAGE - You can change this URL */
+                background-image: url('https://www.dropbox.com/scl/fi/ai8dyhbs672mq4m7hpdwa/Untitled-design.png?rlkey=guuik19awfedy9tawapy7lsw3&st=vls6s35w&dl=1') !important;
+                background-attachment: scroll; /* Helps performance on iPhone */
             }
-            header { padding-top: 40px; }
-            h1 { font-size: 2rem; }
-            .card { padding: 25px 15px; }
-            .btn { display: block; }
+            
+            h1 { font-size: 2.2rem; }
+            .card { padding: 30px 15px; }
+            .btn { width: 100%; display: block; }
         }
     </style>
 </head>
 <body>
 
-    <div class="bg-container"></div>
+    <div class="bg-fixed"></div>
     <div class="bg-overlay"></div>
 
-    <header>
-        <h1>Xavier <span class="ampersand">&</span> Gabrielle</h1>
-        <div class="date-box">OCTOBER 10, 2026</div>
-        <div id="countdown">LOADING...</div>
-    </header>
+    <div class="content-wrapper">
+        <header>
+            <h1>Xavier <span style="display:block; color:var(--maroon); font-size: 2.5rem;">&</span> Gabrielle</h1>
+            <div class="date-box">OCTOBER 10, 2026</div>
+            <div id="countdown" style="margin-top:20px; font-weight:bold; color:var(--maroon);">CALCULATING...</div>
+        </header>
 
-    <nav>
-        <a href="#welcome" class="nav-link">Pups</a>
-        <a href="#travel" class="nav-link">Travel</a>
-        <a href="#photos" class="nav-link">Photos</a>
-        <a href="#rsvp" class="nav-link">RSVP</a>
-    </nav>
+        <nav>
+            <a href="#welcome" class="nav-link">Pups</a>
+            <a href="#travel" class="nav-link">Travel</a>
+            <a href="#photos" class="nav-link">Photos</a>
+            <a href="#rsvp" class="nav-link">RSVP</a>
+        </nav>
 
-    <div class="container">
-        <section id="welcome" class="card">
-            <div style="font-size: 1.5rem; color: var(--emerald);">🐾</div>
-            <h2>A Welcome from the Pups</h2>
-            <div class="photo-frame">
-                <img src="https://www.dropbox.com/scl/fi/fdhj7750xjvflp9q0hjnc/F53DB12D-21CC-4CF2-BD16-F41BC52877A2.JPEG?rlkey=ndrjcxf517sua5u1stu0t7vk5&st=0jx6p3aw&dl=1" alt="The Pups">
-            </div>
-            <p>We are so excited for Dad & Mom's big day!</p>
-            <p style="font-family: 'Abril Fatface'; color: var(--emerald);">Bella, Quentin & Daisy</p>
-        </section>
+        <div class="container">
+            <section id="welcome" class="card">
+                <h2>Welcome</h2>
+                <img src="https://www.dropbox.com/scl/fi/fdhj7750xjvflp9q0hjnc/F53DB12D-21CC-4CF2-BD16-F41BC52877A2.JPEG?rlkey=ndrjcxf517sua5u1stu0t7vk5&st=0jx6p3aw&dl=1" 
+                     style="width: 100%; max-width: 350px; border: 10px solid white; box-shadow: 0 10px 20px rgba(0,0,0,0.1); margin-bottom: 20px;">
+                <p>We are so excited to celebrate with you!</p>
+            </section>
 
-        <section id="travel" class="card">
-            <h2>Travel & Stay</h2>
-            <p><strong>The Venue:</strong> San Antonio, Texas</p>
-            <a href="http://maps.google.com" target="_blank" class="btn" style="background:none; border: 2px solid var(--maroon); color: var(--maroon);">View Map</a>
-        </section>
+            <section id="travel" class="card">
+                <h2>Travel</h2>
+                <p>San Antonio, Texas</p>
+                <a href="#" class="btn" style="background:none; border: 2px solid var(--maroon); color: var(--maroon);">View Map</a>
+            </section>
 
-        <section id="photos" class="card">
-            <h2>Guest Gallery</h2>
-            <a href="https://www.dropbox.com/request/bFsM8yjHcOGsLo1S99UL" class="btn">Upload Photos</a>
-        </section>
-
-        <section id="rsvp" class="card" style="background: var(--maroon); color: white;">
-            <h2 style="color: white;">Kindly Respond</h2>
-            <a href="https://withjoy.com/gabby-cantu-and-xavier/rsvp" class="btn" style="background: white; color: var(--maroon);">RSVP Online</a>
-        </section>
+            <section id="rsvp" class="card" style="background: var(--maroon); color: white;">
+                <h2 style="color: white;">RSVP</h2>
+                <a href="https://withjoy.com/gabby-cantu-and-xavier/rsvp" class="btn" style="background: white; color: var(--maroon);">RSVP Online</a>
+            </section>
+        </div>
     </div>
 
     <script>
         var weddingDate = new Date("Oct 10, 2026 16:30:00").getTime();
-        function updateTimer() {
+        setInterval(function() {
             var now = new Date().getTime();
             var diff = weddingDate - now;
             var days = Math.floor(diff / (1000 * 60 * 60 * 24));
             var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             document.getElementById("countdown").innerHTML = days + " DAYS & " + hours + " HOURS TO GO";
-        }
-        updateTimer();
-        setInterval(updateTimer, 60000);
+        }, 1000);
     </script>
 </body>
 </html>
