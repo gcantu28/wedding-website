@@ -217,26 +217,32 @@
             color: var(--emerald);
         }
 
-        /* Footer */
-        footer {
-            background: rgba(253, 251, 247, 0.75);
-            backdrop-filter: blur(5px);
-            padding: 50px 40px;
-            max-width: 500px;
-            margin: 0 auto 50px auto;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.40);
-            border-radius: 50px;
-        }
+      
 
         /* --- MOBILE FIX FOR BACKGROUND --- */
-  @media (max-width: 768px) {
+ @media (max-width: 768px) {
+
+    /* Turn off desktop background */
+    .bg-container,
+    .bg-overlay {
+        display: none !important;
+        background: none !important;
+        position: static !important;
+    }
+
+    /* Repeating mirrored wallpaper */
     body {
-        background-image: url('save the date (1).png');
-        background-size: contain;       /* shows full floral frame */
-        background-repeat: repeat;
-        background-position: top center; /* stays at the top, looks intentional */
-        background-attachment: scroll;   /* required for iOS */
-        background-color: var(--cream);  /* fills empty space below */
+        background-image: 
+            url('save the date (1).png'),
+            url('save the date flipped.png');
+        background-size: 100% auto;
+        background-repeat: repeat-y;
+        background-position: center top, center 50%;
+        background-attachment: scroll;
+        background-color: var(--cream);
+    }
+}
+
     }
 
     .bg-container,
