@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Xavier & Gabrielle | October 10, 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
@@ -13,115 +13,156 @@
             --text: #2D2D2D;
         }
 
-        html { scroll-behavior: smooth; }
+        * { box-sizing: border-box; }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+            background-color: var(--cream);
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: 'Lato', sans-serif;
-            background-color: var(--cream);
             color: var(--text);
-            margin: 0;
-            padding: 0;
             text-align: center;
+            line-height: 1.6;
         }
 
-        /* --- BACKGROUND (Works for both) --- */
+        /* --- DESKTOP BACKGROUND --- */
         .bg-container {
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -2;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -10;
+            /* DESKTOP IMAGE BELOW */
             background-image: url('https://www.dropbox.com/scl/fi/ai8dyhbs672mq4m7hpdwa/Untitled-design.png?rlkey=guuik19awfedy9tawapy7lsw3&st=vls6s35w&dl=1');
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
         }
 
         .bg-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(253, 251, 247, 0.3);
-            z-index: -1;
+            z-index: -9;
         }
 
-        /* --- TYPOGRAPHY --- */
-        header { padding: 80px 20px 40px; }
-        
+        header { padding: 60px 20px 30px; }
+
         h1 {
             font-family: 'Abril Fatface', cursive;
-            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-size: clamp(2.2rem, 10vw, 5rem);
+            color: #1a1a1a;
             margin: 0;
             text-transform: uppercase;
             line-height: 1.1;
         }
 
-        .ampersand { display: block; font-size: 2.5rem; color: var(--maroon); margin: 5px 0; }
+        .ampersand { display: block; font-size: 2rem; color: var(--maroon); margin: 5px 0; }
 
         .date-box {
             font-family: 'Abril Fatface', cursive;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             border-top: 2px solid #1a1a1a;
             border-bottom: 2px solid #1a1a1a;
             display: inline-block;
-            padding: 10px 40px;
+            padding: 10px 30px;
             margin-top: 15px;
         }
 
-        /* --- NAVIGATION --- */
+        #countdown {
+            margin-top: 20px;
+            font-weight: 700;
+            color: var(--maroon);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
         nav {
             position: sticky;
-            top: 20px;
-            max-width: 500px;
-            margin: 0 auto 40px;
+            top: 15px;
+            width: 90%;
+            max-width: 450px;
+            margin: 0 auto 30px;
             background: rgba(253, 251, 247, 0.95);
             backdrop-filter: blur(10px);
-            padding: 12px;
+            padding: 12px 5px;
             border-radius: 50px;
             z-index: 1000;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-around;
         }
 
         .nav-link {
-            margin: 0 12px;
             text-decoration: none;
             color: var(--maroon);
             font-weight: 700;
             text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 1px;
+            font-size: 0.7rem;
+            letter-spacing: 0.5px;
         }
 
-        /* --- CONTENT CARDS --- */
-        .container { width: 90%; max-width: 650px; margin: 0 auto; padding-bottom: 60px; }
+        .container {
+            width: 95%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding-bottom: 80px;
+        }
 
         .card {
             background: rgba(253, 251, 247, 0.9);
-            padding: 40px;
-            margin-bottom: 30px;
-            border-radius: 30px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            display: block !important; /* Ensures it is NEVER hidden */
+            padding: 35px 20px;
+            margin-bottom: 25px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 1px solid rgba(255,255,255,0.5);
         }
 
-        h2 { font-family: 'Abril Fatface', cursive; color: var(--maroon); font-size: 2.5rem; margin-top: 0; }
+        h2 { font-family: 'Abril Fatface', cursive; color: var(--maroon); font-size: 2.2rem; margin-top: 0; }
+
+        .photo-frame {
+            width: 100%;
+            max-width: 350px;
+            background: white;
+            padding: 10px;
+            margin: 20px auto;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transform: rotate(-1deg);
+        }
+
+        .photo-frame img { width: 100%; height: auto; display: block; }
 
         .btn {
             display: inline-block;
             background: var(--maroon);
             color: white;
-            padding: 16px 35px;
+            padding: 15px 30px;
             text-decoration: none;
             font-family: 'Abril Fatface', cursive;
             border-radius: 4px;
-            margin: 10px;
+            margin: 10px auto;
+            width: 80%;
+            max-width: 280px;
         }
 
-        /* --- MOBILE ADJUSTMENTS --- */
+        /* --- MOBILE OVERRIDES SECTION --- */
         @media (max-width: 600px) {
-            header { padding: 40px 10px 20px; }
-            h1 { font-size: 2.2rem; }
-            nav { width: 92%; top: 10px; }
-            .nav-link { margin: 0 5px; font-size: 0.6rem; }
-            .card { padding: 25px 15px; border-radius: 20px; }
-            .btn { display: block; width: 85%; margin: 10px auto; }
-            .bg-container { background-attachment: scroll; }
+            .bg-container { 
+                /* PASTE YOUR MOBILE IMAGE URL HERE */
+                background-image: url('https://www.dropbox.com/scl/fi/ai8dyhbs672mq4m7hpdwa/Untitled-design.png?rlkey=guuik19awfedy9tawapy7lsw3&st=vls6s35w&dl=1') !important;
+                background-attachment: scroll !important; 
+            }
+            header { padding-top: 40px; }
+            h1 { font-size: 2rem; }
+            .card { padding: 25px 15px; }
+            .btn { display: block; }
         }
     </style>
 </head>
@@ -133,51 +174,43 @@
     <header>
         <h1>Xavier <span class="ampersand">&</span> Gabrielle</h1>
         <div class="date-box">OCTOBER 10, 2026</div>
-        <div id="countdown" style="margin-top:20px; font-weight:700; color:var(--maroon);">CALCULATING...</div>
+        <div id="countdown">LOADING...</div>
     </header>
 
     <nav>
-       
+        <a href="#welcome" class="nav-link">Pups</a>
         <a href="#travel" class="nav-link">Travel</a>
         <a href="#photos" class="nav-link">Photos</a>
         <a href="#rsvp" class="nav-link">RSVP</a>
     </nav>
 
     <div class="container">
-
         <section id="welcome" class="card">
-            <div style="font-size: 2rem; margin-bottom: 10px;">🐾</div>
+            <div style="font-size: 1.5rem; color: var(--emerald);">🐾</div>
             <h2>A Welcome from the Pups</h2>
-            <img src="https://www.dropbox.com/scl/fi/fdhj7750xjvflp9q0hjnc/F53DB12D-21CC-4CF2-BD16-F41BC52877A2.JPEG?rlkey=ndrjcxf517sua5u1stu0t7vk5&st=0jx6p3aw&dl=1" 
-                 alt="Our Pups" 
-                 style="width: 100%; max-width: 350px; border: 10px solid white; box-shadow: 0 10px 20px rgba(0,0,0,0.15); transform: rotate(-2deg); margin: 20px auto; display: block;">
-            <p>Hi everyone! We are so excited for Dad & Mom's big day. We've been practicing our best behavior!</p>
-            <p style="font-family: 'Abril Fatface'; color: var(--emerald); font-size: 1.2rem;">Bella, Quentin & Daisy</p>
+            <div class="photo-frame">
+                <img src="https://www.dropbox.com/scl/fi/fdhj7750xjvflp9q0hjnc/F53DB12D-21CC-4CF2-BD16-F41BC52877A2.JPEG?rlkey=ndrjcxf517sua5u1stu0t7vk5&st=0jx6p3aw&dl=1" alt="The Pups">
+            </div>
+            <p>We are so excited for Dad & Mom's big day!</p>
+            <p style="font-family: 'Abril Fatface'; color: var(--emerald);">Bella, Quentin & Daisy</p>
         </section>
 
         <section id="travel" class="card">
             <h2>Travel & Stay</h2>
             <p><strong>The Venue:</strong> San Antonio, Texas</p>
-            <a href="https://maps.google.com" target="_blank" class="btn" style="background:none; border: 2px solid var(--maroon); color: var(--maroon);">View Map</a>
+            <a href="http://maps.google.com" target="_blank" class="btn" style="background:none; border: 2px solid var(--maroon); color: var(--maroon);">View Map</a>
         </section>
 
         <section id="photos" class="card">
             <h2>Guest Gallery</h2>
-            <p>Share your favorite moments from our wedding weekend!</p>
             <a href="https://www.dropbox.com/request/bFsM8yjHcOGsLo1S99UL" class="btn">Upload Photos</a>
         </section>
 
         <section id="rsvp" class="card" style="background: var(--maroon); color: white;">
             <h2 style="color: white;">Kindly Respond</h2>
-            <p>Please let us know if you can join us by August 15, 2026.</p>
             <a href="https://withjoy.com/gabby-cantu-and-xavier/rsvp" class="btn" style="background: white; color: var(--maroon);">RSVP Online</a>
         </section>
-
     </div>
-
-    <footer style="padding-bottom: 50px; opacity: 0.6;">
-        <p>• X & G • 2026</p>
-    </footer>
 
     <script>
         var weddingDate = new Date("Oct 10, 2026 16:30:00").getTime();
@@ -191,6 +224,5 @@
         updateTimer();
         setInterval(updateTimer, 60000);
     </script>
-
 </body>
 </html>
