@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xavier & Gabrielle | 2026</title>
+    <title>Xavier & Gabrielle | October 10, 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
@@ -13,23 +13,37 @@
             --cream: #FDFBF7;
         }
 
-        /* --- 1. MOBILE BASE STYLES (Default) --- */
+        /* --- 1. MOBILE BASE (Default) --- */
         body { 
             margin: 0; 
             padding: 0; 
             font-family: 'Lato', sans-serif; 
             background-color: var(--cream);
-            background-image: url('https://www.dropbox.com/scl/fi/yufay5vvk1sx7zfezpwik/save-the-date.png?rlkey=v5iise6vjvc88qq7e2203id0i&st=a5klnw5f&dl=1');
+            /* PASTE YOUR PORTRAIT (MOBILE) IMAGE LINK HERE */
+            background-image: url('PASTE_YOUR_MOBILE_LINK_HERE_ENDING_IN_DL=1');
             background-size: cover;
             background-position: center;
             background-attachment: scroll;
         }
 
-        #desktop-content { display: none; } /* Hide desktop by default */
+        #desktop-content { display: none; } 
         #mobile-content { display: block; }
 
+        /* --- 2. DESKTOP UPGRADE (Large Screens) --- */
+        @media screen and (min-width: 801px) {
+            #mobile-content { display: none !important; }
+            #desktop-content { display: block !important; }
+
+            body { 
+                /* PASTE YOUR LANDSCAPE (DESKTOP) IMAGE LINK HERE */
+                background-image: url('https://www.dropbox.com/scl/fi/ai8dyhbs672mq4m7hpdwa/Untitled-design.png?rlkey=guuik19awfedy9tawapy7lsw3&st=vls6s35w&dl=1');
+                background-attachment: fixed;
+                padding: 60px 0;
+            }
+        }
+
+        /* --- SHARED STYLES --- */
         .container { width: 92%; max-width: 600px; margin: 0 auto; text-align: center; padding: 20px 0; }
-        
         .card {
             background: rgba(253, 251, 247, 0.96);
             padding: 30px 15px;
@@ -37,62 +51,17 @@
             border-radius: 20px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
-
-        h1 { font-family: 'Abril Fatface', cursive; font-size: 2.2rem; text-transform: uppercase; margin: 0; }
-        h2 { font-family: 'Abril Fatface', cursive; color: var(--maroon); margin-top: 0; font-size: 1.8rem; }
-        
-        .photo {
-            width: 100%;
-            max-width: 320px;
-            border: 8px solid white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 15px;
-        }
-
-        nav {
-            position: sticky;
-            top: 10px;
-            background: white;
-            padding: 10px;
-            border-radius: 50px;
-            margin: 15px auto 30px;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-around;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-
+        h1 { font-family: 'Abril Fatface', cursive; text-transform: uppercase; margin: 0; }
+        h2 { font-family: 'Abril Fatface', cursive; color: var(--maroon); margin-top: 0; }
+        .photo { width: 100%; max-width: 320px; border: 8px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 15px; }
+        nav { position: sticky; top: 10px; background: white; padding: 10px; border-radius: 50px; margin: 15px auto 30px; z-index: 1000; display: flex; justify-content: space-around; }
         .nav-link { text-decoration: none; color: var(--maroon); font-weight: 700; font-size: 0.65rem; text-transform: uppercase; }
-
-        .btn {
-            display: block;
-            background: var(--maroon);
-            color: white;
-            padding: 14px;
-            text-decoration: none;
-            font-family: 'Abril Fatface', cursive;
-            border-radius: 4px;
-            margin-top: 10px;
-        }
-
-        /* --- 2. DESKTOP UPGRADE (Screen > 800px) --- */
+        .btn { display: block; background: var(--maroon); color: white; padding: 14px; text-decoration: none; font-family: 'Abril Fatface', cursive; border-radius: 4px; }
+        
         @media screen and (min-width: 801px) {
-            #mobile-content { display: none !important; }
-            #desktop-content { display: block !important; }
-
-            body { 
-                background-attachment: fixed; /* Parallax effect for desktop */
-                padding: 60px 0;
-            }
-
             h1 { font-size: 4.5rem; }
-            h2 { font-size: 2.5rem; }
-            
-            nav { max-width: 450px; padding: 15px; top: 20px; }
-            .nav-link { font-size: 0.8rem; }
-            
+            nav { max-width: 450px; padding: 15px; }
             .btn { display: inline-block; width: auto; padding: 15px 40px; }
-            .card { padding: 50px; }
         }
     </style>
 </head>
@@ -102,29 +71,25 @@
         <div class="container">
             <header>
                 <h1>X & G</h1>
-                <p style="font-family:'Abril Fatface';">10.10.2026</p>
+                <p style="font-family:'Abril Fatface';">OCTOBER 10, 2026</p>
             </header>
-
             <nav>
                 <a href="#m-pups" class="nav-link">Pups</a>
                 <a href="#m-travel" class="nav-link">Travel</a>
                 <a href="#m-rsvp" class="nav-link">RSVP</a>
             </nav>
-
             <section id="m-pups" class="card">
                 <h2>The Pups</h2>
                 <img src="https://www.dropbox.com/scl/fi/fdhj7750xjvflp9q0hjnc/F53DB12D-21CC-4CF2-BD16-F41BC52877A2.JPEG?rlkey=ndrjcxf517sua5u1stu0t7vk5&st=0jx6p3aw&dl=1" class="photo">
-                <p>Welcome to our mobile site!</p>
+                <p>Hi from Bella, Quentin & Daisy!</p>
             </section>
-
             <section id="m-travel" class="card">
                 <h2>Travel</h2>
-                <a href="https://maps.google.com" class="btn" style="background:none; border: 1px solid var(--maroon); color: var(--maroon);">Open Map</a>
+                <a href="https://maps.google.com" class="btn">View Map</a>
             </section>
-
             <section id="m-rsvp" class="card" style="background: var(--maroon); color: white;">
                 <h2 style="color: white;">RSVP</h2>
-                <a href="https://withjoy.com/gabby-cantu-and-xavier/rsvp" class="btn" style="background:white; color:var(--maroon);">RSVP Now</a>
+                <a href="https://withjoy.com/gabby-cantu-and-xavier/rsvp" class="btn" style="background:white; color:var(--maroon);">RSVP Online</a>
             </section>
         </div>
     </div>
@@ -133,33 +98,18 @@
         <div class="container">
             <header>
                 <h1>Xavier & Gabrielle</h1>
-                <p style="font-family:'Abril Fatface'; font-size: 1.8rem; border-top: 2px solid black; border-bottom: 2px solid black; display: inline-block; padding: 5px 40px; margin-top: 15px;">OCTOBER 10, 2026</p>
+                <p style="font-family:'Abril Fatface'; font-size: 1.8rem;">OCTOBER 10, 2026</p>
             </header>
-
             <nav>
                 <a href="#d-pups" class="nav-link">The Pups</a>
                 <a href="#d-travel" class="nav-link">Travel & Stay</a>
-                <a href="#d-gallery" class="nav-link">Gallery</a>
                 <a href="#d-rsvp" class="nav-link">RSVP</a>
             </nav>
-
             <section id="d-pups" class="card">
                 <h2>A Welcome from the Pups</h2>
                 <img src="https://www.dropbox.com/scl/fi/fdhj7750xjvflp9q0hjnc/F53DB12D-21CC-4CF2-BD16-F41BC52877A2.JPEG?rlkey=ndrjcxf517sua5u1stu0t7vk5&st=0jx6p3aw&dl=1" class="photo">
-                <p>We are so happy you are visiting our website!</p>
+                <p>Welcome to our wedding website! We are so happy you're here.</p>
             </section>
-
-            <section id="d-travel" class="card">
-                <h2>Travel & Stay</h2>
-                <p>San Antonio, Texas</p>
-                <a href="https://maps.google.com" target="_blank" class="btn" style="background:none; border: 1px solid var(--maroon); color: var(--maroon);">View Venue Map</a>
-            </section>
-
-            <section id="d-gallery" class="card">
-                <h2>Guest Gallery</h2>
-                <a href="https://www.dropbox.com/request/bFsM8yjHcOGsLo1S99UL" class="btn">Upload Photos</a>
-            </section>
-
             <section id="d-rsvp" class="card" style="background: var(--maroon); color: white;">
                 <h2 style="color: white;">Kindly Respond</h2>
                 <a href="https://withjoy.com/gabby-cantu-and-xavier/rsvp" class="btn" style="background:white; color:var(--maroon);">Online RSVP</a>
