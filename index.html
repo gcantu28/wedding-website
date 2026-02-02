@@ -7,9 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     
     <style>
-        /* =========================================
-           1. GENERAL & DESKTOP STYLES (Default)
-           ========================================= */
+        /* --- 1. GLOBAL & DESKTOP STYLES --- */
         :root {
             --emerald: #044A42;
             --maroon: #630D16;
@@ -28,7 +26,7 @@
             line-height: 1.6;
         }
 
-        /* Fixed Background */
+        /* The Background System */
         .bg-container {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -46,119 +44,114 @@
             z-index: -1;
         }
 
-        header { padding: 100px 20px 60px; }
+        header { padding: 80px 20px 40px; }
 
         h1 {
             font-family: 'Abril Fatface', cursive;
-            font-size: 5rem;
+            font-size: clamp(2.5rem, 8vw, 5rem);
             color: #1a1a1a;
             margin: 0;
             text-transform: uppercase;
+            line-height: 1.1;
         }
 
-        .ampersand { display: block; font-size: 3rem; color: var(--maroon); }
+        .ampersand { display: block; font-size: 2.5rem; color: var(--maroon); margin: 5px 0; }
 
         .date-box {
             font-family: 'Abril Fatface', cursive;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             border-top: 2px solid #1a1a1a;
             border-bottom: 2px solid #1a1a1a;
             display: inline-block;
             padding: 10px 40px;
-            margin-top: 20px;
+            margin-top: 15px;
         }
 
-        /* Navigation Bar */
+        /* Navigation */
         nav {
             position: sticky;
             top: 20px;
             max-width: 500px;
             margin: 0 auto 40px;
-            background: rgba(253, 251, 247, 0.9);
-            padding: 15px 25px;
+            background: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px;
             border-radius: 50px;
             z-index: 1000;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.5);
         }
 
         .nav-link {
-            margin: 0 15px;
+            margin: 0 12px;
             text-decoration: none;
             color: var(--maroon);
             font-weight: 700;
             text-transform: uppercase;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             letter-spacing: 1.5px;
         }
 
-        /* Main Content Cards */
-        .container { max-width: 650px; margin: 0 auto; padding: 20px; }
+        /* Content Layout */
+        .container { width: 90%; max-width: 650px; margin: 0 auto; padding-bottom: 60px; }
 
         .card {
             background: rgba(253, 251, 247, 0.9);
-            padding: 50px;
-            margin-bottom: 40px;
+            padding: 40px;
+            margin-bottom: 30px;
             border-radius: 30px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.4);
         }
 
-        h2 { font-family: 'Abril Fatface', cursive; color: var(--maroon); font-size: 2.8rem; }
+        h2 { font-family: 'Abril Fatface', cursive; color: var(--maroon); font-size: 2.5rem; margin-top: 0; }
 
         .btn {
             display: inline-block;
             background: var(--maroon);
             color: white;
-            padding: 16px 40px;
+            padding: 16px 35px;
             text-decoration: none;
             font-family: 'Abril Fatface', cursive;
             border-radius: 4px;
             margin: 10px;
+            transition: 0.3s;
         }
 
-        /* =========================================
-           2. MOBILE SECTION (Overrides)
-           ========================================= */
-        @media (max-width: 600px) {
-            /* Background Fix for Mobile */
-            .bg-container { background-attachment: scroll; }
-            
-            header { padding: 50px 10px 30px; }
+        .btn:hover { background: var(--emerald); transform: translateY(-2px); }
 
-            h1 { font-size: 2.5rem; }
-            .ampersand { font-size: 1.8rem; }
+        /* --- 2. MOBILE OVERRIDES (The "Mobile Section") --- */
+        @media (max-width: 600px) {
+            .bg-container { background-attachment: scroll; } /* Prevents jumpy scrolling on iPhone */
             
-            .date-box { font-size: 1.3rem; padding: 5px 20px; }
+            header { padding: 40px 10px 20px; }
+            h1 { font-size: 2.2rem; }
+            .ampersand { font-size: 1.5rem; }
+            .date-box { font-size: 1.2rem; padding: 5px 20px; }
 
             nav {
-                width: 90%;
+                width: 95%;
                 top: 10px;
-                padding: 10px;
+                padding: 10px 5px;
             }
-
-            .nav-link { margin: 0 5px; font-size: 0.65rem; }
-
-            .container { padding: 10px; }
+            .nav-link { margin: 0 5px; font-size: 0.6rem; letter-spacing: 0.5px; }
 
             .card {
-                padding: 30px 20px;
+                padding: 25px 15px;
                 border-radius: 20px;
-                margin-bottom: 25px;
             }
-
             h2 { font-size: 1.8rem; }
 
-            /* Stack buttons on phone */
+            /* Stack buttons for easy thumb-tapping */
             .btn {
                 display: block;
-                width: 90%;
+                width: 85%;
                 margin: 10px auto;
                 padding: 14px 0;
             }
-
-            .pet-photo img {
-                max-width: 100% !important;
-                transform: rotate(0deg) !important;
-            }
+            
+            /* Responsive Image Fix */
+            img { max-width: 100% !important; height: auto !important; }
         }
     </style>
 </head>
@@ -170,51 +163,61 @@
     <header>
         <h1>Xavier <span class="ampersand">&</span> Gabrielle</h1>
         <div class="date-box">OCTOBER 10, 2026</div>
-        <div id="countdown" style="margin-top:20px; font-weight:bold; color:var(--maroon);">CALCULATING...</div>
+        <div id="countdown" style="margin-top:20px; font-weight:700; color:var(--maroon); letter-spacing:1px;">CALCULATING...</div>
     </header>
 
     <nav>
         <a href="#welcome" class="nav-link">Pups</a>
         <a href="#travel" class="nav-link">Travel</a>
-        <a href="#registry" class="nav-link">Registry</a>
+        <a href="#photos" class="nav-link">Photos</a>
         <a href="#rsvp" class="nav-link">RSVP</a>
     </nav>
 
     <div class="container">
 
         <section id="welcome" class="card">
+            <div style="font-size: 2rem; color: var(--emerald); margin-bottom: 10px;">🐾</div>
             <h2>A Welcome from the Pups</h2>
-            <img src="https://www.dropbox.com/scl/fi/fdhj7750xjvflp9q0hjnc/F53DB12D-21CC-4CF2-BD16-F41BC52877A2.JPEG?rlkey=ndrjcxf517sua5u1stu0t7vk5&st=0jx6p3aw&dl=1" alt="Our Pups" style="width: 100%; max-width: 350px; border: 12px solid white; box-shadow: 0 10px 20px rgba(0,0,0,0.15); transform: rotate(-2deg); margin-bottom: 20px;">
-            <p>Hi everyone! We can't wait to celebrate with you!</p>
-            <p style="font-family: 'Abril Fatface'; color: var(--emerald);">Bella, Quentin & Daisy</p>
+            <img src="https://www.dropbox.com/scl/fi/fdhj7750xjvflp9q0hjnc/F53DB12D-21CC-4CF2-BD16-F41BC52877A2.JPEG?rlkey=ndrjcxf517sua5u1stu0t7vk5&st=0jx6p3aw&dl=1" alt="Our Pups" style="max-width: 350px; border: 10px solid white; box-shadow: 0 10px 20px rgba(0,0,0,0.15); transform: rotate(-2deg); margin: 15px auto; display: block;">
+            <p>Hi everyone! We can't wait to celebrate with you. Make sure to bring treats!</p>
+            <p style="font-family: 'Abril Fatface'; color: var(--emerald); font-size: 1.2rem;">Bella, Quentin & Daisy</p>
         </section>
 
         <section id="travel" class="card">
             <h2>Travel & Stay</h2>
-            <p>San Antonio, Texas</p>
+            <p><strong>The Venue:</strong> San Antonio, Texas</p>
             <a href="https://maps.google.com" target="_blank" class="btn" style="background:none; border: 2px solid var(--maroon); color: var(--maroon);">View Map</a>
+        </section>
+
+        <section id="photos" class="card">
+            <h2>Guest Gallery</h2>
+            <p>Help us capture the magic!</p>
+            <a href="https://www.dropbox.com/request/bFsM8yjHcOGsLo1S99UL" class="btn">Upload Photos</a>
         </section>
 
         <section id="rsvp" class="card" style="background: var(--maroon); color: white;">
             <h2 style="color: white;">Kindly Respond</h2>
+            <p>Please RSVP by August 15, 2026.</p>
             <a href="https://withjoy.com/gabby-cantu-and-xavier/rsvp" class="btn" style="background: white; color: var(--maroon);">RSVP Online</a>
         </section>
 
     </div>
 
-    <footer style="padding: 40px; opacity: 0.8;">
-        <p>• X & G • 2026</p>
+    <footer style="padding-bottom: 50px; opacity: 0.6; font-size: 0.8rem;">
+        <p>• X & G • MADE WITH LOVE</p>
     </footer>
 
     <script>
         var weddingDate = new Date("Oct 10, 2026 16:30:00").getTime();
-        setInterval(function() {
+        function updateTimer() {
             var now = new Date().getTime();
             var diff = weddingDate - now;
             var days = Math.floor(diff / (1000 * 60 * 60 * 24));
             var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             document.getElementById("countdown").innerHTML = days + " DAYS & " + hours + " HOURS TO GO";
-        }, 1000);
+        }
+        updateTimer();
+        setInterval(updateTimer, 60000);
     </script>
 
 </body>
